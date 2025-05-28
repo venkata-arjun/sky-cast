@@ -30,6 +30,22 @@ async function checkWeather(city) {
             weatherIcon.src = "images/mist.png";
         }
 
+        // Live date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', year: 'numeric', month: 'long', 
+                day: 'numeric'
+            };
+            const dateStr = now.toLocaleDateString('en-US', options);
+            const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.querySelector(".datetime").innerHTML = `${dateStr} ${timeStr}`;
+        }
+
+        if (window.datetimeInterval) clearInterval(window.datetimeInterval);
+        updateDateTime();
+        window.datetimeInterval = setInterval(updateDateTime, 1000);
+
         document.querySelector(".weather").style.display = "block";
         document.querySelector(".error").style.display = "none";
     }
@@ -46,4 +62,3 @@ searchBox.addEventListener("keyup", (event) => {
     }
 });
 
-// https://api.openweathermap.org/data/2.5/weather?q=hyderabad&appid=b524c15c498bd3d3e5bc7919653a1d5a
