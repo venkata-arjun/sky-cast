@@ -2,6 +2,11 @@
 
 A simple weather application that displays current weather conditions for any city worldwide, along with live date and time.  
 
+---
+
+## Live Demo  
+🔹 **Check out the live demo of the Weather App below:**
+
 ![Weather App Screenshot](images/demo-image.png) 
 
 ---  
@@ -22,17 +27,34 @@ A simple weather application that displays current weather conditions for any ci
 ## API Key Setup & Security  
 
 ### How to Get an API Key  
-1. Go to [OpenWeatherMap](https://openweathermap.org/)  
+1. Go to OpenWeatherMap webiste.
 2. Sign up for a **free account**  
 3. Navigate to the **API Keys** section in your dashboard  
-4. Generate a new key (it may take a few minutes to activate)  
+4. Generate a new key (it may take a few minutes to activate)
 
-### Important Security Note  
-🔒 **Never expose your API key in client-side code in production!**  
-- In this demo, the API key is hardcoded in `index.js` **for testing only**.  
-- For security, in a real-world app:  
-  - Use **environment variables** (e.g., `.env` file + backend proxy)  
-  - Or deploy with **server-side API calls** (Node.js, Firebase, etc.)  
+5. Here’s the cleaned-up and properly formatted version of your **Important Security Note**:
+
+---
+
+### 🔐 Important Security Note
+
+> **⚠️ Never expose your API key in client-side code in production!**
+
+Even though your app may work by adding the key directly in your JavaScript, this is **not secure** for real-world use.
+
+#### ✅ Best Practices:
+
+* ❌ Avoid putting the API key directly in `index.js` or any frontend file
+* ✅ Instead, use:
+
+  * **Environment variables** (`.env` files) with a build tool (like Vite/Webpack)
+  * A **backend proxy** (Node.js, Express, etc.) to handle API requests securely
+  * Hosting platforms with secret management (like **Netlify**, **Vercel**, **Firebase Functions**)
+
+---
+
+> 🔐 Treat your API key like a password — keep it secret and secure.
+---
 
 ### How to Use the Key in This Project  
 1. Open `index.js`  
@@ -85,9 +107,5 @@ weather-app/
 
 ---  
 
-## License  
-MIT License. **Use responsibly — keep your API key secure!**  
-
----  
 
 **⚠️ Reminder:** Always hide API keys in production. This demo is for learning purposes only.  
