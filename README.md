@@ -2,7 +2,7 @@
 
 A simple weather application that displays current weather conditions for any city worldwide, along with live date and time.  
 
-![Weather App Screenshot](images/demo-example.png) *(Replace with actual screenshot after uploading)*  
+![Weather App Screenshot](images/demo-image.png) *(Replace with actual screenshot after uploading)*  
 
 ---  
 
